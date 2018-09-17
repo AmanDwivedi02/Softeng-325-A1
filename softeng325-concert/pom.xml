@@ -4,7 +4,7 @@
 	<groupId>nz.ac.auckland</groupId>
 	<artifactId>softeng325-concert</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<packaging>pom</packaging>
 	<name>softeng325-concert-parent</name>
 	

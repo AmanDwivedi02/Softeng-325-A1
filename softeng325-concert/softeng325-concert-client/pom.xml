@@ -46,7 +46,7 @@
         	<artifactId>resteasy-jaxb-provider</artifactId>
         	<version>${resteasy.version}</version>
         </dependency>
-		
+
 		<!-- AWS library. -->
 		<dependency>
 			<groupId>com.amazonaws</groupId>

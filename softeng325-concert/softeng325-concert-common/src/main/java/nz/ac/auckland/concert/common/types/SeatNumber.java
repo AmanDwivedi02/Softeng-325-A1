@@ -1,7 +1,10 @@
 package nz.ac.auckland.concert.common.types;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -11,11 +14,16 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
  * SeatNumber is a Number subtype that constrains values in the range 1..26. 
  *
  */
+@Embeddable
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SeatNumber extends Number {
+	@Transient
 	private static final int MIN = 1;
+
+	@Transient
 	private static final int MAX = 26;
-	
+
+	@XmlElement(name = "seatValue")
 	private int _value;
 	
 	public SeatNumber() {}

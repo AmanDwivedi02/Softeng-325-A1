@@ -9,6 +9,8 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.xml.bind.annotation.*;
+
 /**
  * DTO class to represent reservations. 
  * 
@@ -22,14 +24,22 @@ import org.slf4j.LoggerFactory;
  *                     of SeatDTO objects).
  *
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "reservation")
 public class ReservationDTO {
-	
+
+    @XmlElement(name = "id")
 	private Long _id;
+
+    @XmlElement(name = "reservationRequest")
 	private ReservationRequestDTO _request;
+
+    @XmlElementWrapper(name = "seats")
+    @XmlElement(name = "seat")
 	private Set<SeatDTO> _seats;
 	
 	public ReservationDTO() {}
-	
+
 	public ReservationDTO(Long id, ReservationRequestDTO request, Set<SeatDTO> seats) {
 		_id = id;
 		_request = request;
